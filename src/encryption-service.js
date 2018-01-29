@@ -2,13 +2,13 @@
 const crypto = require("crypto");
 
 class EncryptionService {
-  constructor(algorithm, key) {
+  constructor(algorithm, password) {
     this.algorithm = algorithm;
-    this.key = key;
+    this.password = password;
   }
 
   encrypt(text) {
-    const cipher = crypto.createCipher(this.algorithm, this.key);
+    const cipher = crypto.createCipher(this.algorithm, this.password);
     let crypted = cipher.update(text, "utf8", "hex");
 
     crypted += cipher.final("hex");
@@ -16,7 +16,7 @@ class EncryptionService {
   }
 
   decrypt(text) {
-    const decipher = crypto.createDecipher(this.algorithm, this.key);
+    const decipher = crypto.createDecipher(this.algorithm, this.password);
     let dec = decipher.update(text, "hex", "utf8");
 
     dec += decipher.final("utf8");
