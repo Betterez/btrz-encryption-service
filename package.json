@@ -1,0 +1,19 @@
+{
+  "name": "btrz-encryption-service",
+  "version": "1.0.0",
+  "description": "Library to encrypt and decrypt text",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Betterez/btrz-encryption-service.git"
+  },
+  "author": "Betterez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Betterez/btrz-encryption-service/issues"
+  },
+  "homepage": "https://github.com/Betterez/btrz-encryption-service#readme"
+}
