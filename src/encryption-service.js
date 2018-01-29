@@ -2,8 +2,7 @@
 const crypto = require("crypto");
 
 class EncryptionService {
-
-  constructor (algorithm, key) {
+  constructor(algorithm, key) {
     this.algorithm = algorithm;
     this.key = key;
   }
@@ -16,16 +15,32 @@ class EncryptionService {
     return crypted;    
   }
 
-  getEncryptedObjectTextProps(object) {
-    const keys = Object.keys(object);
-    let result = {};
+  decrypt(text) {
+    const decipher = crypto.createDecipher(this.algorithm, this.key);
+    let dec = decipher.update(text, "hex", "utf8");
+
+    dec += decipher.final("utf8");
+    return dec;
+  }
+  
+  applyOnProperties(object, func) {
+    const keys = Object.keys(object),
+      result = {};
 
     for (let i = 0; i < keys.length; i++) {
       const key = keys[i];
-      result[key] = this.encrypt(object[key]);      
+      result[key] = func.bind(this, object[key])();      
     }
     
     return result;
+  }
+
+  getDecryptedObjectTextProps(object) {
+    return this.applyOnProperties(object, this.decrypt);
+  }
+
+  getEncryptedObjectTextProps(object) {
+    return this.applyOnProperties(object, this.encrypt);
   }
 }
 

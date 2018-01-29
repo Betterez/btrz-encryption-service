@@ -24,5 +24,27 @@ describe("Encryption Service", () => {
       expect(result.prop1).to.be.eql("268113052ab0dd5bd2b0227a8915d83c");
       expect(result.prop2).to.be.eql("f12af480a2c377a0a385008e8c9a6a66");
     });
-  });  
+  }); 
+  
+  describe("#decrypt()", () => {
+    it("should decrypt the text", () => {
+      const text = "b6441f655c01bed788ccc56be7a21fda",
+        result = service.decrypt(text);
+
+      expect(result).to.be.eql("my password");
+    });
+  });
+
+  describe("#getDecryptedObjectTextProps()", () => {
+    it("should return the same object with the decrypted props", () => {
+      const object = {
+          prop1: "268113052ab0dd5bd2b0227a8915d83c",
+          prop2: "f12af480a2c377a0a385008e8c9a6a66"
+        },
+        result = service.getDecryptedObjectTextProps(object);
+
+      expect(result.prop1).to.be.eql("prop1");
+      expect(result.prop2).to.be.eql("prop2");
+    });
+  });    
 });
