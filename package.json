@@ -4,7 +4,8 @@
   "description": "Library to encrypt and decrypt text",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "NODE_ENV=test multi='xunit=test-results/xunit.xml spec=-' node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- --exit --ui bdd -R mocha-multi -t 10000",
+    "test-w": "NODE_ENV=test node_modules/mocha/bin/mocha -w"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Betterez/btrz-encryption-service/issues"
   },
-  "homepage": "https://github.com/Betterez/btrz-encryption-service#readme"
+  "homepage": "https://github.com/Betterez/btrz-encryption-service#readme",
+  "devDependencies": {
+    "chai": "latest",
+    "eslint": "^4.8.0",
+    "eslint-plugin-mocha": "^4.9.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.1.0",
+    "mocha-multi": "latest"
+  }
 }
