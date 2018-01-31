@@ -12,6 +12,12 @@
     "url": "git+https://github.com/Betterez/btrz-encryption-service.git"
   },
   "author": "Betterez",
+  "contributors": [
+    {
+      "name": "romerol",
+      "email": "romero.lucas@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Betterez/btrz-encryption-service/issues"
