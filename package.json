@@ -4,7 +4,7 @@
   "description": "Library to encrypt and decrypt text",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test multi='xunit=test-results/xunit.xml spec=-' node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- --exit --ui bdd -R mocha-multi -t 10000",
+    "test": "NODE_ENV=test node_modules/mocha/bin/mocha --exit --ui bdd -t 10000",
     "test-w": "NODE_ENV=test node_modules/mocha/bin/mocha -w"
   },
   "repository": {
@@ -27,8 +27,6 @@
     "chai": "latest",
     "eslint": "^4.8.0",
     "eslint-plugin-mocha": "^4.9.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^4.1.0",
-    "mocha-multi": "latest"
+    "mocha": "latest"
   }
 }
