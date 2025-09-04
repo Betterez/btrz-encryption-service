@@ -1,6 +1,6 @@
 {
   "name": "btrz-encryption-service",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Library to encrypt and decrypt text",
   "main": "index.js",
   "scripts": {
