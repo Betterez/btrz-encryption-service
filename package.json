@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/Betterez/btrz-encryption-service#readme",
   "devDependencies": {
-    "chai": "latest",
+    "chai": "4.3.6",
     "eslint": "^4.8.0",
     "eslint-plugin-mocha": "^4.9.0",
-    "mocha": "latest"
+    "mocha": "9.2.2"
   }
 }
