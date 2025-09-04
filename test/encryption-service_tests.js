@@ -4,10 +4,10 @@ const expect = require("chai").expect,
   service = require("../index")("AES256", "secretKey");
 
 describe("Encryption Service", () => {
-  describe("#encrypt()", () => {
+  describe("#encryptIv()", () => {
     it("should encrypt the text", () => {
       const text = "my password",
-        result = service.encrypt(text);
+        result = service.encryptIv(text);
 
       expect(result).to.be.eql("b6441f655c01bed788ccc56be7a21fda");
     });
@@ -26,10 +26,10 @@ describe("Encryption Service", () => {
     });
   }); 
   
-  describe("#decrypt()", () => {
+  describe("#decryptIv()", () => {
     it("should decrypt the text", () => {
       const text = "b6441f655c01bed788ccc56be7a21fda",
-        result = service.decrypt(text);
+        result = service.decryptIv(text);
 
       expect(result).to.be.eql("my password");
     });
