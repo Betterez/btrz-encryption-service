@@ -53,22 +53,6 @@ class EncryptionService {
     dec += decipher.final("utf8");
     return dec;
   }
-  // Deprecated
-  encrypt(text) {
-    const cipher = crypto.createCipher(this.algorithm, this.password);
-    let crypted = cipher.update(text, "utf8", "hex");
-
-    crypted += cipher.final("hex");
-    return crypted;    
-  }
-  // Deprecated
-  decrypt(text) {
-    const decipher = crypto.createDecipher(this.algorithm, this.password);
-    let dec = decipher.update(text, "hex", "utf8");
-
-    dec += decipher.final("utf8");
-    return dec;
-  }
   
   applyOnProperties(object, func) {
     const keys = Object.keys(object),

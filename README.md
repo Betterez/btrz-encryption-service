@@ -19,11 +19,11 @@ const encriptionService = require("btrz-encryption-service")(algorithm, password
 
 ## Methods
 
-### encrypt(string)
+### encryptIv(string)
 
 Encrypts the passed string and returns it.
 
-### decrypt(encrypted)
+### decryptIv(encrypted)
 
 Decrypts the passed value and returns the string.
 
